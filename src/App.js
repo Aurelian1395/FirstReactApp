@@ -1,9 +1,9 @@
-import React, {useState}from 'react';
+import React from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-const  App= ()=> {
-  const expenses= [
+const App = () => {
+  const expenses = [
     {
       id: "e1",
       title: "Auto comprata",
@@ -23,13 +23,18 @@ const  App= ()=> {
       date: new Date(2022, 1, 10),
     },
   ];
- 
 
-  return ( <div>
-    <NewExpense/>
-   <Expenses item={expenses}/>
-   </div>
+  const addExpenseHandler = (expense) => {
+    console.log("in App.js");
+    console.log(expense);
+  };
+
+  return (
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses item={expenses} />
+    </div>
   );
-}
+};
 
 export default App;

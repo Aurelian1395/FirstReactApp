@@ -24,9 +24,9 @@ const ExpenseForm = (props) => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData)
+   
     // All'invio del form il form torna vuoto ma i dati sono raccolti grazie all'Obj sopra.
-    props.saveExpenseData(expenseData);
+    props.onSaveData(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
     seEnteredDate('');
